@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Recent Accounts">
+        <div class="slds-m-around_medium">
+            <template if:true={accounts}>
+                <ul class="slds-list_dotted">
+                    <template for:each={accounts} for:item="account">
+                        <li key={account.Id}>
+                            <a href="javascript:void(0);" data-account-id={account.Id} onclick={handleAccountClick}>
+                                {account.Name}
+                             </a>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template if:false={accounts}>
+                No accounts found.
+            </template>
+        </div>
+    </lightning-card>
+</template>
